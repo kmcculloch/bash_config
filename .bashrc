@@ -16,21 +16,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# mac: 01;33 (yellow)
-# newtarget: 01;32 (green)
 PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;33m\]mac:\w\[\033[00m\]\$ '
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -G'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

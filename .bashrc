@@ -16,7 +16,9 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;33m\]mac:\w\[\033[00m\]\$ '
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

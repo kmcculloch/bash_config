@@ -16,6 +16,8 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# mac: 01;33 (yellow)
+# newtarget: 01;32 (green)
 PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;33m\]mac:\w\[\033[00m\]\$ '
 
 # enable color support of ls and also add handy aliases

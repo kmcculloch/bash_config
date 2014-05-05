@@ -5,6 +5,7 @@ set nocompatible "unclear why, but better safe than sorry
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+filetype plugin on
 set autoindent
 
 " APPEARANCE

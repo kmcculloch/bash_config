@@ -22,8 +22,8 @@ set title "set terminal title to file name
 
 " RIGHT-SIDE MARGIN
 "see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-highlight ColorColumn ctermbg=233
-let &colorcolumn=join(range(81,999),",")
+"highlight ColorColumn ctermbg=233
+"let &colorcolumn=join(range(81,999),",")
 
 " BEHAVIOR
 "set relativenumber

@@ -10,5 +10,6 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.inc setfiletype php
   au! BufRead,BufNewFile *.install setfiletype php
   au! BufRead,BufNewFile *.less setfiletype less
+  au! BufRead,BufNewFile *.scss setfiletype css
   "au! BufRead,BufNewFile *.tpl.php setfiletype html
 augroup END

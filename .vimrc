@@ -5,6 +5,7 @@ set nocompatible "unclear why, but better safe than sorry
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+filetype plugin on
 set autoindent
 
 " APPEARANCE
@@ -21,8 +22,7 @@ set title "set terminal title to file name
 
 " RIGHT-SIDE MARGIN
 "see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-highlight ColorColumn ctermbg=233
-" disabled for osdev
+"highlight ColorColumn ctermbg=233
 "let &colorcolumn=join(range(81,999),",")
 
 " BEHAVIOR

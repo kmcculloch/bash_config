@@ -40,3 +40,7 @@ export PATH="/Users/kevin/bin:/usr/local/mysql/bin:$PATH"
 
 # treat symbolic link directories as directories (append trailing slash on autocomplete)
 bind 'set mark-symlinked-directories on'
+
+# Set vim as default editor for sudoedit
+export EDITOR=/usr/bin/vim
+

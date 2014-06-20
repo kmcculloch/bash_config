@@ -18,8 +18,6 @@ alias c='clear'
 alias cdc='cd; clear'
 alias total='du -hc | grep total'
 
-alias mysql='mysql -u root -proot'
-
 alias watch='bundle exec compass watch'
 
 alias chmod755='find . -type d -exec chmod 775 {} +'

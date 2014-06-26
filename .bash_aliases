@@ -14,6 +14,10 @@ alias ll='ls -lh'
 alias la='ls -A'
 alias lla='ls -lhA'
 
+alias llg='ll | grep'
+alias lag='ll | grep'
+alias llag='lla | grep'
+
 alias c='clear'
 alias cdc='cd; clear'
 alias total='du -hc | grep total'

@@ -16,18 +16,8 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;33m\]mac:\w\[\033[00m\]\$ '
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -G'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
 fi
 
 # Alias definitions.
@@ -50,3 +40,7 @@ export PATH="/Users/kevin/bin:/usr/local/mysql/bin:$PATH"
 
 # treat symbolic link directories as directories (append trailing slash on autocomplete)
 bind 'set mark-symlinked-directories on'
+
+# Set vim as default editor for sudoedit
+export EDITOR=/usr/bin/vim
+

@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Library/WebServer/discovery4/docroot/sites/wecanchange.com/modules/custom/wcc_registration'
+let g:netrw_dirhist_2='/home/kevinm/vimwiki'

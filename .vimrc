@@ -14,7 +14,7 @@ colorscheme jellybeans
 "colorscheme coffee "colors a bit neon; not enough variation
 "colorscheme desert256 "nice, modest; comments light blue
 "colorscheme molokai "pretty good variation; background is dark grey
-"set number "left-hand line numbering
+set number "left-hand line numbering
 set ruler "show line, column number and percentage
 set linebreak "wrap long lines rather than entering line breaks
 set scrolloff=3 "scrolling offset of 3 lines at top/bottom
@@ -24,6 +24,13 @@ set title "set terminal title to file name
 "see http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 "highlight ColorColumn ctermbg=233
 "let &colorcolumn=join(range(81,999),",")
+
+" SHOWMARKS
+hi ShowMarksHLl ctermfg=grey ctermbg=none
+hi ShowMarksHLu ctermfg=grey ctermbg=none
+hi ShowMarksHLo ctermfg=grey ctermbg=none
+hi ShowMarksHLm ctermfg=grey ctermbg=none
+let b:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 " BEHAVIOR
 "set relativenumber
@@ -133,6 +140,17 @@ noremap <Leader>l 10l
 noremap <Leader>f 24jzz
 noremap <Leader>F 24kzz
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
+      \'nested_syntaxes': {'php': 'php'}}]
+let g:vimwiki_table_mappings = 0
+      "\'template_path': '~/Dropbox/vimwiki/template/',
+      "\'template_default': 'default',
+      "\'template_ext': '.html',
+      "\'path_html': '~/Dropbox/github/vimwiki/'
+
+map <F4> :VimwikiAll2HTML<CR>
+
 " REMAINDERS
 "autocmd VimEnter * 24jzz
 "colorscheme desert256
@@ -157,6 +175,7 @@ noremap <Leader>F 24kzz
 "nnoremap <Leader>o o<Esc>
 
 " set mark s, then begin search at top of file
+"noremap / ms/
 "noremap / msgg/
 " set mark s, then begin word match at top of file
 "nnoremap * ms:set wrapscan<CR>*ggn:set nowrapscan<CR>

@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Library/WebServer/discovery4/docroot/sites/wecanchange.com/modules/custom/wcc_registration'
+let g:netrw_dirhist_2='/etc/httpd/conf'
+let g:netrw_dirhist_3='/var/www/idsa_dev1/sites/all/modules/contrib/mobile_navigation'
+let g:netrw_dirhist_4='/var/www/idsa_dev1/sites/all/modules/custom/idsa_node'
+let g:netrw_dirhist_5='/var/www/idsa_dev1/sites/default/files/field_main_image'
+let g:netrw_dirhist_6='/var/www/idsa_dev1/sites/all/modules/custom/idsa_custom'
+let g:netrw_dirhist_7='/var/www/idsa_dev1/sites/all/modules/contrib/draggableviews/handlers'
+let g:netrw_dirhist_8='/home/kevinm/bash_config/.vim/plugin'

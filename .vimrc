@@ -1,8 +1,110 @@
 " K. McCULLOCH VIMRC
 
-" FILETYPES
-set nocompatible "unclear why, but better safe than sorry
-execute pathogen#infect()
+"""""""""""
+" OPTIONS "
+"""""""""""
+" Use Vim (not Vi) option defaults
+set nocompatible
+
+" Left-hand line numbering
+set number " turn on left-hand numbering
+set numberwidth=5 " use 5 spaces for left-hand number column
+
+" Tab bar at top of screen
+set showtabline=2 "always show tab bar
+
+" Status bar at bottom left of screen
+set laststatus=2 "always show the status line
+set statusline=%f "path to file, relative to directory where vim was launched
+set statusline+=\ %y "filetype in brackets
+set statusline+=%= "right justify rest of status line
+set statusline+=l/%L "current line/total lines
+
+""""""""""""""""
+" KEY MAPPINGS "
+""""""""""""""""
+" use the space bar as the mapleader key
+nnoremap <Space> <Nop>
+let mapleader = " "
+
+" use the tab key for escape operations
+" in normal mode, cancel any prefix keys (eg. # for count)
+nnoremap <Tab> <Esc>
+" in visual mode, cancel any selection (gV prevents automatic reselection)
+vnoremap <Tab> <Esc>gV
+" cancel any operator-pending command
+onoremap <Tab> <Esc>
+" exit insert mode and restore cursor position (no move left)
+inoremap <Tab> <Esc>`^
+" insert an actual-to-goodness tab when in insert mode
+inoremap \<Tab> <Tab>
+" Turn off K (does a sudden help topic lookup that is distracting)
+nnoremap K <Nop>
+
+" Require a leader stroke to use J to concatenate lines
+nnoremap <Leader>J J
+nnoremap J <Nop>
+
+" A leader stroke followed by d/D deletes lines in confusing ways
+nnoremap <Leader>d <Nop>
+nnoremap <Leader>D <Nop>
+
+" Use the arrow keys to navigate between open tabs
+noremap <Leader><Left> :tabp<CR>
+noremap <Leader><Right> :tabn<CR>
+noremap <Leader><Down> :tabnew<CR>
+noremap <Leader><Up> :tabm 0<CR>
+
+" Use u/U to make a word lower/upper case in normal mode
+noremap <Leader>U vawgU
+noremap <Leader>u vawgu
+
+" Use ctrl-u to make a word upper case in insert mode
+inoremap <c-u> <esc>vawgUi
+
+" clear previous search string
+noremap <Leader><Space> :let<Space>@/<Space>=<Space>""<CR>
+
+" always paste above
+nnoremap p P
+
+" always insert line above 
+nnoremap o O
+
+" enter insert mode ready to append to the end of a line
+noremap <Leader>a $a
+
+" enter insert mode ready to prepend to the start of a line
+noremap <Leader>i ^i
+
+" insert a single character at the cursor point
+nnoremap <Leader>r i_<Esc>r
+
+" open .vimrc in a new tab for editing 
+nnoremap <leader>ev :tabnew $MYVIMRC<CR>
+
+" source .vimrc
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" create a shortcut for adding a space before all opening brackets
+" (useful for CSS format correction)
+" http://stackoverflow.com/questions/8405946/regex-to-insert-space-in-vim
+nnoremap <leader>{ :%s/\(\S\){/\1 {/g<CR>
+
+" create a shortcut for adding a space after all colons
+" (useful for CSS format correction)
+nnoremap <leader>: :%s/:\(\S\)/: \1/g<CR>
+
+"""""""""""""""""
+" ABBREVIATIONS "
+"""""""""""""""""
+" Rewrite :help to expand to :tab help (opens help topics in a new tab)
+cabbrev help tab help
+
+
+
+
+"to sort
 syntax on
 filetype plugin indent on
 filetype plugin on
@@ -14,7 +116,6 @@ colorscheme jellybeans
 "colorscheme coffee "colors a bit neon; not enough variation
 "colorscheme desert256 "nice, modest; comments light blue
 "colorscheme molokai "pretty good variation; background is dark grey
-set number "left-hand line numbering
 set ruler "show line, column number and percentage
 set linebreak "wrap long lines rather than entering line breaks
 set scrolloff=3 "scrolling offset of 3 lines at top/bottom
@@ -26,6 +127,7 @@ set title "set terminal title to file name
 "let &colorcolumn=join(range(81,999),",")
 
 " SHOWMARKS
+"execute pathogen#infect()
 hi ShowMarksHLl ctermfg=grey ctermbg=none
 hi ShowMarksHLu ctermfg=grey ctermbg=none
 hi ShowMarksHLo ctermfg=grey ctermbg=none
@@ -49,39 +151,7 @@ set visualbell "use the visual bell instead of beeping
 set nobackup 
 set noswapfile 
 
-" MAP LEADER
-" use the space bar as a leader for custom operations
-nnoremap <Space> <Nop>
-let mapleader = " "
 
-" UNMAP CERTAIN KEYS
-" better if keys I often hit in error do nothing
-nnoremap K <Nop>
-nnoremap <Leader>J J
-nnoremap J <Nop>
-nnoremap <Leader>d <Nop>
-nnoremap <Leader>D <Nop>
-
-" TABS
-set showtabline=2 "always show tab bar
-cabbrev help tab help
-noremap <Leader><Left> :tabp<CR>
-noremap <Leader><Right> :tabn<CR>
-noremap <Leader><Down> :tabnew<CR>
-noremap <Leader><Up> :tabm 0<CR>
-
-" ESCAPE KEY
-" use the tab key to escape
-" in normal mode, cancel any prefix keys (eg. # for count)
-nnoremap <Tab> <Esc>
-" in visual mode, cancel any selection (gV prevents automatic reselection)
-vnoremap <Tab> <Esc>gV
-" cancel any operator-pending command
-onoremap <Tab> <Esc>
-" exit insert mode and restore cursor position (no move left)
-inoremap <Tab> <Esc>`^
-" insert an actual-to-goodness tab when in insert mode
-inoremap \<Tab> <Tab>
 
 " SEARCHING
 set ignorecase "case ignored while searching
@@ -89,36 +159,6 @@ set smartcase
 set incsearch "see results while typing
 set hlsearch "search matches are highlighted
 set nowrapscan
-" clear previous search string
-noremap <Leader><Space> :let<Space>@/<Space>=<Space>""<CR>
-
-" CUT & PASTE
-" always paste above
-nnoremap p P
-
-" INSERTIONS
-" insert one character
-nnoremap <Leader>r i_<Esc>r
-" always insert line above 
-nnoremap o O
-" append to end of the line
-noremap <Leader>a $a
-" prepend to beginning of the line
-noremap <Leader>i ^i
-
-" TRANSFORMATIONS
-" make a word upper case
-noremap <Leader>U vawgU
-" make a word lower case
-noremap <Leader>u vawgu
-
-" VIMRC EDITING
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" a shortcut mapping for :
-noremap ; :
-
 
 " MOVEMENT
 
@@ -149,7 +189,7 @@ let g:vimwiki_table_mappings = 0
       "\'template_ext': '.html',
       "\'path_html': '~/Dropbox/github/vimwiki/'
 
-map <F4> :VimwikiAll2HTML<CR>
+noremap <F4> :VimwikiAll2HTML<CR>
 
 " REMAINDERS
 "autocmd VimEnter * 24jzz

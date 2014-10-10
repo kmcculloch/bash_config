@@ -1,3 +1,11 @@
-PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;33m\]mac:\w\[\033[00m\]\$ '
+# vim:filetype=sh
 
-alias mysql='mysql -u root -proot'
+# to review colors
+# sudo apt-get install colortest
+# colortest-16b
+
+#PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]kevinm-desktop:\w\[\033[00m\]\$ '
+PS1='\[\e]0;\u@\h: \w\a\]\[\033[32m\]kevinm-desktop:\w\[\033[00m\]\$ '
+export EDITOR=/usr/bin/vim
+umask 002
+

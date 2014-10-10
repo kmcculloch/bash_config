@@ -44,3 +44,6 @@ bind 'set mark-symlinked-directories on'
 # Set vim as default editor for sudoedit
 export EDITOR=/usr/bin/vim
 
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+  export TERM=xterm-256color
+fi

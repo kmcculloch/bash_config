@@ -20,7 +20,7 @@ set smartcase "causes Foo only to match Foo
 
 " other search options
 set incsearch "see results while typing
-set hlsearch "search matches are highlighted
+"set hlsearch "search matches are highlighted
 set nowrapscan "keep searches from wrapping around the end of the file
 
 " left-hand line numbering
@@ -170,14 +170,6 @@ set background=dark
 set t_Co=256
 let g:gruvbox_italic=0
 colorscheme gruvbox
-
-"colorscheme kkruby
-"colorscheme oceandeep
-"colorscheme Tomorrow-Night-Bright
-"colorscheme jellybeans
-"colorscheme coffee "colors a bit neon; not enough variation
-"colorscheme desert256 "nice, modest; comments light blue
-"colorscheme molokai "pretty good variation; background is dark grey
 
 " .vim/bundle/ShowMarks
 " Default keymappings are:

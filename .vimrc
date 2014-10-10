@@ -149,19 +149,26 @@ filetype indent on
 " source .vim/syntax
 syntax on
 
-" colorscheme
-set background=dark
-"set background=light
+"""""""""""""""""
+" COLOR SCHEMES "
+"""""""""""""""""
+" solarized
+" for this to look right, we must first set our terminal emulator's
+" colorscheme to use the Solarized palette.
+" http://ethanschoonover.com/solarized/vim-colors-solarized
+"set background=dark
 "set t_Co=16
-"set t_Co=256
-"let g:solarized_termcolors=16
-let g:solarized_termcolors=256
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-let g:solarized_termtrans = 1
-colorscheme solarized
+"colorscheme solarized
 
-"set t_Co=256 "use 256 colors
+" distinguished
+"set background=dark
+"set t_Co=256 
+"colorscheme distinguished
+
+" gruvbox
+set background=dark
+colorscheme gruvbox
+
 "colorscheme kkruby
 "colorscheme oceandeep
 "colorscheme Tomorrow-Night-Bright

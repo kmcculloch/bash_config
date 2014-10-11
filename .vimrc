@@ -131,6 +131,9 @@ nnoremap <leader>{ :%s/\(\S\){/\1 {/g<CR>
 " (useful for CSS format correction)
 nnoremap <leader>: :%s/:\(\S\)/: \1/g<CR>
 
+" when cursor is on word, use F10 to get info about syntax highlighting
+noremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 """""""""""""""""
 " ABBREVIATIONS "
 """""""""""""""""
@@ -169,6 +172,7 @@ syntax on
 set background=dark
 set t_Co=256
 let g:gruvbox_italic=0
+let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
 " .vim/bundle/ShowMarks

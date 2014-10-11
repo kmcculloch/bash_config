@@ -406,8 +406,6 @@ let s:delimiterMap = {
     \ 'z8a': { 'left': ';' }
     \ }
 
-let g:NERDDelimiterMap = s:delimiterMap
-
 if exists("g:NERDCustomDelimiters")
     call extend(s:delimiterMap, g:NERDCustomDelimiters)
 endif

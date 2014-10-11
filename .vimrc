@@ -20,7 +20,7 @@ set smartcase "causes Foo only to match Foo
 
 " other search options
 set incsearch "see results while typing
-"set hlsearch "search matches are highlighted
+set hlsearch "search matches are highlighted
 set nowrapscan "keep searches from wrapping around the end of the file
 
 " left-hand line numbering
@@ -163,16 +163,11 @@ syntax on
 "set t_Co=16
 "colorscheme solarized
 
-" distinguished
-"set background=dark
-"set t_Co=256 
-"colorscheme distinguished
-
 " gruvbox
+" note: see line 207 of gruvbox.vim for some custom overrides I've made
 set background=dark
 set t_Co=256
 let g:gruvbox_italic=0
-let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
 " .vim/bundle/ShowMarks

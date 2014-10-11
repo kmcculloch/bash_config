@@ -134,6 +134,24 @@ nnoremap <leader>: :%s/:\(\S\)/: \1/g<CR>
 " when cursor is on word, use F10 to get info about syntax highlighting
 noremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" make sure marks move us back to the specified location
+nnoremap ' `
+nnoremap ` '
+
+" keep cursor from jumping over multiline rows
+nnoremap j gj
+nnoremap k gk
+
+" multiples of ten
+noremap <Leader>j 10j
+noremap <Leader>k 10k
+noremap <Leader>h 10h
+noremap <Leader>l 10l
+
+" up or down half a page, then center screen
+noremap <Leader>f 24jzz
+noremap <Leader>F 24kzz
+
 """""""""""""""""
 " ABBREVIATIONS "
 """""""""""""""""
@@ -170,6 +188,9 @@ set t_Co=256
 let g:gruvbox_italic=0
 colorscheme gruvbox
 
+"""""""""""""
+" SHOWMARKS "
+"""""""""""""
 " .vim/bundle/ShowMarks
 " Default keymappings are:
 " <Leader>mt - Toggles ShowMarks on and off.
@@ -184,6 +205,9 @@ hi ShowMarksHLm ctermfg=grey ctermbg=none
 let g:showmarks_enable=0
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+"""""""""""
+" VIMWIKI "
+"""""""""""
 " .vim/bundle/vimwiki
 "let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
       "\'nested_syntaxes': {'php': 'php'}}]
@@ -194,60 +218,10 @@ let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
       "\'path_html': '~/Dropbox/github/vimwiki/'
 "noremap <F4> : VimwikiAll2HTML<CR>
 
-
-" RIGHT-SIDE MARGIN
+"""""""""""""""""""""
+" RIGHT-SIDE MARGIN "
+"""""""""""""""""""""
 "see http: //vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 "highlight ColorColumn ctermbg=233
 "let &colorcolumn=join(range(81,999),",")
 
-" MOVEMENT
-
-" make sure marks move us back to the specified location
-nnoremap ' `
-nnoremap ` '
-
-" keep cursor from jumping over multiline rows
-nnoremap j gj
-nnoremap k gk
-
-" multiples of ten
-noremap <Leader>j 10j
-noremap <Leader>k 10k
-noremap <Leader>h 10h
-noremap <Leader>l 10l
-
-" up or down half a page, then center screen
-noremap <Leader>f 24jzz
-noremap <Leader>F 24kzz
-
-" REMAINDERS
-"autocmd VimEnter * 24jzz
-"colorscheme desert256
-"noremap <Leader>H : help<CR>: only<CR>
-" COMMENTS
-" //
-"noremap <Leader>/ ^i//<Esc>hj
-"noremap <Leader>? ^xxj
-" "
-"noremap <Leader>" ^i"<Esc>j
-"noremap <Leader>' ^xj
-" /* */
-"noremap <Leader>* ^i/*<Esc>$a*/<Esc>j
-"noremap <Leader>8 ^xx$xxj
-" # 
-"noremap <Leader># ^i#<Esc>j
-"noremap <Leader>3 ^xj
-"noremap <Leader>/ <Leader>c<space>
-
-" insert one line above and exit insert mode
-"nnoremap <Leader>O o<Esc>
-"nnoremap <Leader>o o<Esc>
-
-" set mark s, then begin search at top of file
-"noremap / ms/
-"noremap / msgg/
-" set mark s, then begin word match at top of file
-"nnoremap * ms: set wrapscan<CR>*ggn: set nowrapscan<CR>
-" SPECIAL SEARCHES
-" find the beginning of comment blocks
-" noremap <Leader>c msgg/\/\*\*<CR>

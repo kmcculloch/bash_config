@@ -1,5 +1,3 @@
-" custom filetypes
-
 " echo &filetype to see current setting
 if exists("did_load_filetypes")
   finish

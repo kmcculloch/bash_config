@@ -28,7 +28,7 @@ set number "turn on left-hand numbering
 set numberwidth=5 "use 5 spaces for left-hand number column
 
 " tab bar at top of screen
-set showtabline=2 "always show tab bar
+"set showtabline=2 "always show tab bar
 
 " status bar at bottom left of screen
 set laststatus=2 "always show the status line
@@ -86,10 +86,10 @@ nnoremap <Leader>d <Nop>
 nnoremap <Leader>D <Nop>
 
 " use the arrow keys to navigate between open tabs
-noremap <Leader><Left> :tabp<CR>
-noremap <leader><Right> :tabn<CR>
-noremap <Leader><Down> :tabnew<CR>
-noremap <Leader><Up> :tabm 0<CR>
+"noremap <Leader><Left> :tabp<CR>
+"noremap <leader><Right> :tabn<CR>
+"noremap <Leader><Down> :tabnew<CR>
+"noremap <Leader><Up> :tabm 0<CR>
 
 " use u/U to make a word lower/upper case in normal mode
 noremap <Leader>U vawgU
@@ -117,7 +117,8 @@ noremap <Leader>i ^i
 nnoremap <Leader>r i_<Esc>r
 
 " open .vimrc in a new tab for editing 
-nnoremap <leader>ev :tabnew $MYVIMRC<CR>
+" @TODO use buffer instead
+"nnoremap <leader>ev :tabnew $MYVIMRC<CR>
 
 " source .vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -148,6 +149,11 @@ noremap <Leader>k 10k
 noremap <Leader>h 10h
 noremap <Leader>l 10l
 
+noremap J 5j
+noremap K 5k
+noremap H 5h
+noremap L 5l
+
 " up or down half a page, then center screen
 noremap <Leader>f 24jzz
 noremap <Leader>F 24kzz
@@ -156,7 +162,7 @@ noremap <Leader>F 24kzz
 " ABBREVIATIONS "
 """""""""""""""""
 " rewrite :help to expand to :tab help (opens help topics in a new tab)
-cabbrev help tab help
+"cabbrev help tab help
 
 """""""""""
 " PLUGINS "
@@ -224,4 +230,30 @@ let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 "see http: //vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 "highlight ColorColumn ctermbg=233
 "let &colorcolumn=join(range(81,999),",")
+
+"""""""""""
+" BUFFERS "
+"""""""""""
+set hidden
+set confirm
+set equalalways
+set splitbelow
+set splitright
+
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
+nnoremap <Leader>wj <c-w><c-j>
+nnoremap <Leader>wk <c-w><c-k>
+nnoremap <Leader>wl <c-w><c-l>
+nnoremap <Leader>wh <c-w><c-h>
+nnoremap <Leader>w= <c-w>=
+noremap <Left> <c-w><c-h>
+noremap <Right> <c-w><c-l>
+noremap <Down> <c-w><c-j>
+noremap <Up> <c-w><c-k>
+
+let g:miniBufExplBuffersNeeded=0 "start automatically
+let g:miniBufExplBRSplit=0 "put mini buffer on top
 

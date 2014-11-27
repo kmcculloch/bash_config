@@ -28,7 +28,7 @@ set number "turn on left-hand numbering
 set numberwidth=5 "use 5 spaces for left-hand number column
 
 " tab bar at top of screen
-set showtabline=2 "always show tab bar
+"set showtabline=2 "always show tab bar
 
 " status bar at bottom left of screen
 set laststatus=2 "always show the status line
@@ -86,10 +86,10 @@ nnoremap <Leader>d <Nop>
 nnoremap <Leader>D <Nop>
 
 " use the arrow keys to navigate between open tabs
-noremap <Leader><Left> :tabp<CR>
-noremap <leader><Right> :tabn<CR>
-noremap <Leader><Down> :tabnew<CR>
-noremap <Leader><Up> :tabm 0<CR>
+"noremap <Leader><Left> :tabp<CR>
+"noremap <leader><Right> :tabn<CR>
+"noremap <Leader><Down> :tabnew<CR>
+"noremap <Leader><Up> :tabm 0<CR>
 
 " use u/U to make a word lower/upper case in normal mode
 noremap <Leader>U vawgU
@@ -117,7 +117,8 @@ noremap <Leader>i ^i
 nnoremap <Leader>r i_<Esc>r
 
 " open .vimrc in a new tab for editing 
-nnoremap <leader>ev :tabnew $MYVIMRC<CR>
+" @TODO use buffer instead
+"nnoremap <leader>ev :tabnew $MYVIMRC<CR>
 
 " source .vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -134,11 +135,34 @@ nnoremap <leader>: :%s/:\(\S\)/: \1/g<CR>
 " when cursor is on word, use F10 to get info about syntax highlighting
 noremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" make sure marks move us back to the specified location
+nnoremap ' `
+nnoremap ` '
+
+" keep cursor from jumping over multiline rows
+nnoremap j gj
+nnoremap k gk
+
+" multiples of ten
+noremap <Leader>j 10j
+noremap <Leader>k 10k
+noremap <Leader>h 10h
+noremap <Leader>l 10l
+
+noremap J 5j
+noremap K 5k
+noremap H 5h
+noremap L 5l
+
+" up or down half a page, then center screen
+noremap <Leader>f 24jzz
+noremap <Leader>F 24kzz
+
 """""""""""""""""
 " ABBREVIATIONS "
 """""""""""""""""
 " rewrite :help to expand to :tab help (opens help topics in a new tab)
-cabbrev help tab help
+"cabbrev help tab help
 
 """""""""""
 " PLUGINS "
@@ -170,6 +194,9 @@ set t_Co=256
 let g:gruvbox_italic=0
 colorscheme gruvbox
 
+"""""""""""""
+" SHOWMARKS "
+"""""""""""""
 " .vim/bundle/ShowMarks
 " Default keymappings are:
 " <Leader>mt - Toggles ShowMarks on and off.
@@ -184,6 +211,9 @@ hi ShowMarksHLm ctermfg=grey ctermbg=none
 let g:showmarks_enable=0
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+"""""""""""
+" VIMWIKI "
+"""""""""""
 " .vim/bundle/vimwiki
 "let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
       "\'nested_syntaxes': {'php': 'php'}}]
@@ -194,60 +224,36 @@ let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
       "\'path_html': '~/Dropbox/github/vimwiki/'
 "noremap <F4> : VimwikiAll2HTML<CR>
 
-
-" RIGHT-SIDE MARGIN
+"""""""""""""""""""""
+" RIGHT-SIDE MARGIN "
+"""""""""""""""""""""
 "see http: //vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
 "highlight ColorColumn ctermbg=233
 "let &colorcolumn=join(range(81,999),",")
 
-" MOVEMENT
+"""""""""""
+" BUFFERS "
+"""""""""""
+set hidden
+set confirm
+set equalalways
+set splitbelow
+set splitright
 
-" make sure marks move us back to the specified location
-nnoremap ' `
-nnoremap ` '
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
+nnoremap <Leader>wj <c-w><c-j>
+nnoremap <Leader>wk <c-w><c-k>
+nnoremap <Leader>wl <c-w><c-l>
+nnoremap <Leader>wh <c-w><c-h>
+nnoremap <Leader>w= <c-w>=
+noremap <Left> <c-w><c-h>
+noremap <Right> <c-w><c-l>
+noremap <Down> <c-w><c-j>
+noremap <Up> <c-w><c-k>
 
-" keep cursor from jumping over multiline rows
-nnoremap j gj
-nnoremap k gk
+let g:miniBufExplBuffersNeeded=0 "start automatically
+let g:miniBufExplBRSplit=0 "put mini buffer on top
 
-" multiples of ten
-noremap <Leader>j 10j
-noremap <Leader>k 10k
-noremap <Leader>h 10h
-noremap <Leader>l 10l
-
-" up or down half a page, then center screen
-noremap <Leader>f 24jzz
-noremap <Leader>F 24kzz
-
-" REMAINDERS
-"autocmd VimEnter * 24jzz
-"colorscheme desert256
-"noremap <Leader>H : help<CR>: only<CR>
-" COMMENTS
-" //
-"noremap <Leader>/ ^i//<Esc>hj
-"noremap <Leader>? ^xxj
-" "
-"noremap <Leader>" ^i"<Esc>j
-"noremap <Leader>' ^xj
-" /* */
-"noremap <Leader>* ^i/*<Esc>$a*/<Esc>j
-"noremap <Leader>8 ^xx$xxj
-" # 
-"noremap <Leader># ^i#<Esc>j
-"noremap <Leader>3 ^xj
-"noremap <Leader>/ <Leader>c<space>
-
-" insert one line above and exit insert mode
-"nnoremap <Leader>O o<Esc>
-"nnoremap <Leader>o o<Esc>
-
-" set mark s, then begin search at top of file
-"noremap / ms/
-"noremap / msgg/
-" set mark s, then begin word match at top of file
-"nnoremap * ms: set wrapscan<CR>*ggn: set nowrapscan<CR>
-" SPECIAL SEARCHES
-" find the beginning of comment blocks
-" noremap <Leader>c msgg/\/\*\*<CR>

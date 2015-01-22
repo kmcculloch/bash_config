@@ -1,4 +1,4 @@
-# vim:filetype=sh
+# vm:filetype=sh
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -29,4 +29,4 @@ alias watch='bundle exec compass watch'
 alias chmod755='find . -type d -exec chmod 775 {} +'
 alias chmod644='find . -type f -exec chmod 644 {} +'
 
-alias vi="vim -u $KM_VIM/vimrc --cmd 'set rtp^=$KM_VIM/vim'"
+#alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/home/wsbadmin/\.vim\", \"/home/wsbadmin/mccullok/km_vim/vim\", \"g\")'"

@@ -8,3 +8,6 @@ export KM_PROMPT_COLOR="Green"
 export KM_BASH="/Users/mccullok/km_bash"
 export KM_VIM="/Users/mccullok/km_vim"
 source "$KM_BASH/bashrc"
+
+alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/home/wsbadmin/\.vim\", \"/home/wsbadmin/mccullok/km_vim/vim\", \"g\")'"
+

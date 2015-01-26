@@ -1,5 +1,8 @@
 # vim:filetype=sh
 
+# Color support for Mac
+#export CLICOLOR=1
+
 # Set local prompt name/color
 export KM_PROMPT="mccullok@mac"
 export KM_PROMPT_COLOR="Green"

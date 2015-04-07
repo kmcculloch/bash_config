@@ -1,0 +1,40 @@
+# vim:filetype=sh
+# Copy this file to ~/.bash_profile and edit as necessary for a given
+# environment.
+
+# Color support for Mac
+#export CLICOLOR=1
+
+# Set local prompt name/color
+export KM_PROMPT="mccullok@mac"
+export KM_PROMPT_COLOR="Green"
+
+# Set path to local install of bash config and vim files
+export KM_BASH="/Users/mccullok/km_bash"
+export KM_VIM="/Users/mccullok/km_vim"
+
+# Source BASH settings common to all environments
+source "$KM_BASH/bashrc"
+
+# Use one of these aliases in shared account environments. In local machine
+# environments, it's better to just symlink .vim and .vimrc so that they're
+# easily available to sudo -e.
+#alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/home/wsbadmin/\.vim\", \"/home/wsbadmin/mccullok/km_vim/vim\", \"g\")'"
+#alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/Users/mccullok/\.vim\", \"/Users/mccullok/km_vim/vim\", \"g\")'"
+
+# From AO USC mac:
+# http proxy for wget, curl, and other downloads
+# machine in question is webmon.usc.ao.dcn
+# nslookup webmon
+#export http_proxy=156.132.20.149:80
+
+# From AO USC mac:
+# Homebrew (brew doctor) wanted me to do this:
+#export PATH='/usr/local/sbin:'$PATH
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Set vim as default editor for sudoedit
+export EDITOR=/usr/bin/vim
+#export EDITOR=/usr/local/bin/vim
+

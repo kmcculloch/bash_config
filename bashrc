@@ -28,9 +28,6 @@ fi
 # treat symbolic link directories as directories (append trailing slash on autocomplete)
 bind 'set mark-symlinked-directories on'
 
-# Set vim as default editor for sudoedit
-export EDITOR=/usr/bin/vim
-
 # Make most of my work group-writable
 umask 002
 

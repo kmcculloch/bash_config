@@ -30,3 +30,6 @@ alias chmod755='find . -type d -exec chmod 775 {} +'
 alias chmod644='find . -type f -exec chmod 644 {} +'
 
 #alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/home/wsbadmin/\.vim\", \"/home/wsbadmin/mccullok/km_vim/vim\", \"g\")'"
+
+alias sls='cat ~/.ssh/config | grep "Host "'
+alias hosts='sudo -e /etc/hosts'

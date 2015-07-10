@@ -1,7 +1,5 @@
-bash_config
+km_bash
 ===========
 
-In ~/.bash_profile, source the following files:
-
-source bash_config/bashrc
+Copy bash_profile.example to .bash_profile and edit as needed
 

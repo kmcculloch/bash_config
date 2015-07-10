@@ -38,3 +38,13 @@ source "$KM_BASH/bashrc"
 export EDITOR=/usr/bin/vim
 #export EDITOR=/usr/local/bin/vim
 
+# Make a function to cd to an alias
+declare -A godir
+go() {
+  cd ${godir[$1]}
+}
+#godir[loc]=~/vagrant/loc
+#godir[drush]=~/.composer/vendor/drush/drush
+
+# alias for GNU grep if needed on Mac machines
+#alias grep="ggrep --color=auto"

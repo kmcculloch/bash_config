@@ -50,5 +50,6 @@ go() {
 #alias grep="ggrep --color=auto"
 
 # Source bashmarks.sh
-export SDIRS="$KM_BASH/.sdirs"
+unalias l
+export SDIRS="Users/mccullok/.sdirs"
 source "$KM_BASH/lib/bashmarks.sh"

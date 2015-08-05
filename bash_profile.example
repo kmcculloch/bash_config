@@ -48,3 +48,7 @@ go() {
 
 # alias for GNU grep if needed on Mac machines
 #alias grep="ggrep --color=auto"
+
+# Source bashmarks.sh
+export SDIRS="$KM_BASH/.sdirs"
+source "$KM_BASH/lib/bashmarks.sh"

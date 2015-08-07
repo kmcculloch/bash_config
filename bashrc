@@ -49,6 +49,6 @@ export GIT_COMMITTER_EMAIL=$KM_EMAIL
 export GIT_CONFIG="$KM_BASH/gitconfig"
 
 # Source bashmarks.sh
-unalias l
+unalias l 2>/dev/null
 export SDIRS="$KM_HOME/.sdirs"
 source "$KM_BASH/lib/bashmarks.sh"

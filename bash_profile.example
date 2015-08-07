@@ -2,6 +2,11 @@
 # Copy this file to ~/.bash_profile and edit as necessary for a given
 # environment.
 
+# Set path to local install of bash config and vim files
+export KM_HOME=$HOME
+export KM_BASH="$KM_HOME/km_bash"
+export KM_VIM="$KM_HOME/km_vim"
+
 # Color support for Mac
 #export CLICOLOR=1
 
@@ -14,11 +19,6 @@ source "$KM_BASH/lib/gruvbox_256palette_osx.sh"
 # Set local prompt name/color
 export KM_PROMPT="mccullok@mac"
 export KM_PROMPT_COLOR="Green"
-
-# Set path to local install of bash config and vim files
-export KM_HOME=$HOME
-export KM_BASH="$KM_HOME/km_bash"
-export KM_VIM="$KM_HOME/km_vim"
 
 # Set local name and email (for git, mostly)
 export KM_NAME="Kevin McCulloch"

@@ -5,13 +5,24 @@
 # Color support for Mac
 #export CLICOLOR=1
 
+# Set gruvbox palette to 256 colors
+# I believe the osx is the right script to use so long as I'm ssh'ing from a
+# Mac workstation, regardless of whether I'm on a linux box.
+source "$KM_BASH/lib/gruvbox_256palette_osx.sh"
+#source "$KM_BASH/lib/gruvbox_256palette.sh"
+
 # Set local prompt name/color
 export KM_PROMPT="mccullok@mac"
 export KM_PROMPT_COLOR="Green"
 
 # Set path to local install of bash config and vim files
-export KM_BASH="/Users/mccullok/km_bash"
-export KM_VIM="/Users/mccullok/km_vim"
+export KM_HOME=$HOME
+export KM_BASH="$KM_HOME/km_bash"
+export KM_VIM="$KM_HOME/km_vim"
+
+# Set local name and email (for git, mostly)
+export KM_NAME="Kevin McCulloch"
+export KM_EMAIL="kevin_mcculloch@ao.uscourts.gov"
 
 # Source BASH settings common to all environments
 source "$KM_BASH/bashrc"
@@ -22,34 +33,5 @@ source "$KM_BASH/bashrc"
 #alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/home/wsbadmin/\.vim\", \"/home/wsbadmin/mccullok/km_vim/vim\", \"g\")'"
 #alias vi="vim -u $KM_VIM/vimrc --cmd 'let &rtp = substitute(&rtp, \"/Users/mccullok/\.vim\", \"/Users/mccullok/km_vim/vim\", \"g\")'"
 
-# From AO USC mac:
-# http proxy for wget, curl, and other downloads
-# machine in question is webmon.usc.ao.dcn
-# nslookup webmon
-#export http_proxy=156.132.20.149:80
-
-# From AO USC mac:
-# Homebrew (brew doctor) wanted me to do this:
-#export PATH='/usr/local/sbin:'$PATH
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# Set vim as default editor for sudoedit
-export EDITOR=/usr/bin/vim
-#export EDITOR=/usr/local/bin/vim
-
-# Make a function to cd to an alias
-declare -A godir
-go() {
-  cd ${godir[$1]}
-}
-#godir[loc]=~/vagrant/loc
-#godir[drush]=~/.composer/vendor/drush/drush
-
 # alias for GNU grep if needed on Mac machines
 #alias grep="ggrep --color=auto"
-
-# Source bashmarks.sh
-unalias l
-export SDIRS="Users/mccullok/.sdirs"
-source "$KM_BASH/lib/bashmarks.sh"

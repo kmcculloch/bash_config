@@ -31,11 +31,15 @@ bind 'set mark-symlinked-directories on'
 # Make most of my work group-writable
 umask 002
 
+# Use vim where I can
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Source colors and aliases
-source "$KM_BASH/bash_aliases"
+source "$KM_BASH/lib/bash_aliases.sh"
 
 # Source prompt
-source "$KM_BASH/bash_prompt"
+source "$KM_BASH/lib/bash_prompt.sh"
 
 # Source local git settings
 export GIT_AUTHOR_NAME=$KM_NAME
@@ -44,4 +48,7 @@ export GIT_COMMITTER_NAME=$KM_NAME
 export GIT_COMMITTER_EMAIL=$KM_EMAIL
 export GIT_CONFIG="$KM_BASH/gitconfig"
 
-
+# Source bashmarks.sh
+unalias l
+export SDIRS="$KM_HOME/.sdirs"
+source "$KM_BASH/lib/bashmarks.sh"

@@ -36,3 +36,12 @@ source "$KM_BASH/bash_aliases"
 
 # Source prompt
 source "$KM_BASH/bash_prompt"
+
+# Source local git settings
+export GIT_AUTHOR_NAME=$KM_NAME
+export GIT_AUTHOR_EMAIL=$KM_EMAIL
+export GIT_COMMITTER_NAME=$KM_NAME
+export GIT_COMMITTER_EMAIL=$KM_EMAIL
+export GIT_CONFIG="$KM_BASH/gitconfig"
+
+

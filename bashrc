@@ -46,7 +46,6 @@ export GIT_AUTHOR_NAME=$KM_NAME
 export GIT_AUTHOR_EMAIL=$KM_EMAIL
 export GIT_COMMITTER_NAME=$KM_NAME
 export GIT_COMMITTER_EMAIL=$KM_EMAIL
-export GIT_CONFIG="$KM_BASH/gitconfig"
 
 # Source bashmarks.sh
 unalias l 2>/dev/null

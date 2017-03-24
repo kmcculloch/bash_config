@@ -39,7 +39,9 @@ export EDITOR="$VISUAL"
 source "$KM_BASH/lib/bash_aliases.sh"
 
 # Source prompt
-source "$KM_BASH/lib/bash_prompt.sh"
+if [ -n "$KM_PROMPT" ]; then
+  source "$KM_BASH/lib/bash_prompt.sh"
+fi
 
 # Source local git settings
 export GIT_AUTHOR_NAME=$KM_NAME
